@@ -36,4 +36,8 @@ class AppStrings {
   static const String add = "Ekle";
   // #Change Location
 
+  // Other
+  static const String logoPath = "assets/svg/logo.svg";
+  // #Other
+
 }
