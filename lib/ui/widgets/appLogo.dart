@@ -1,5 +1,4 @@
 import 'package:EzanVakti/ui/helper/AppStrings.dart';
-import 'package:EzanVakti/ui/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'screens/home_page.dart';
 import 'ui/helper/AppColors.dart';
-import 'ui/helper/AppIcons.dart';
-import 'ui/widgets/helper.dart';
+import 'ui/helper/AppStrings.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,16 +20,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: themeData,
-      title: 'Material App',
-      home: Scaffold(
-        backgroundColor: themeData.backgroundColor,
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Helper.appLogo,
-        ),
-      ),
+      title: AppStrings.appName,
+      home: HomePage(),
     );
   }
 }
