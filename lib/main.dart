@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ui/helper/AppColors.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -8,6 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         brightness: Brightness.light,
+        primaryColor: AppColors.colorLightPrimary,
       ),
       title: 'Material App',
       home: Scaffold(
