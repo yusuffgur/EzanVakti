@@ -29,6 +29,7 @@ class AppStrings {
   static const String afternoon = "İkindi";
   static const String evening = "Akşam";
   static const String night = "Gece";
+  static const String moon = "Yatsı";
   // #Home Screen
 
   // Change Location

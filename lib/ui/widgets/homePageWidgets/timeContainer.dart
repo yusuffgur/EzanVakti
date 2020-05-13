@@ -6,12 +6,7 @@ class TimeContainer extends StatelessWidget {
   final String time;
   final bool visibleRamazan;
   final String ramazanDay;
-  const TimeContainer({
-    Key key,
-    @required this.time,
-    @required this.visibleRamazan,
-    @required this.ramazanDay,
-  }) : super(key: key);
+  const TimeContainer({Key key, @required this.time, @required this.visibleRamazan, @required this.ramazanDay}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

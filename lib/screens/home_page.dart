@@ -2,6 +2,7 @@ import 'package:EzanVakti/ui/widgets/app_bar.dart' show CustomAppBar;
 import 'package:EzanVakti/ui/widgets/bottom_bar.dart' show CustomBottomNavigationBar;
 import 'package:EzanVakti/ui/widgets/helper.dart';
 import 'package:EzanVakti/ui/widgets/homePageWidgets/iftarTimeContainer.dart';
+import 'package:EzanVakti/ui/widgets/homePageWidgets/prayerTimeContainer.dart';
 import 'package:EzanVakti/ui/widgets/homePageWidgets/timeContainer.dart' show TimeContainer;
 import 'package:flutter/material.dart' show BuildContext, Column, EdgeInsets, Padding, Scaffold, SingleChildScrollView, State, StatefulWidget, Theme, Widget;
 import 'package:intl/intl.dart' show DateFormat;
@@ -36,6 +37,8 @@ class _HomePageState extends State<HomePage> {
               TimeContainer(ramazanDay: differenceInDays, time: format.format(now).toString(), visibleRamazan: visibleRamazan),
               Helper.sizedBoxH20,
               IftarTimeContanier(hour: 3, minute: 35, second: 33),
+              Helper.sizedBoxH20,
+              PrayerTimeContainer(city: "Bursa"),
             ],
           ),
         ),

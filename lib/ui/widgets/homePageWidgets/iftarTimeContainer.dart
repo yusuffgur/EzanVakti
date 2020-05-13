@@ -5,12 +5,7 @@ import 'package:flutter/material.dart';
 class IftarTimeContanier extends StatelessWidget {
   final int hour, minute, second;
 
-  const IftarTimeContanier({
-    Key key,
-    @required this.hour,
-    @required this.minute,
-    @required this.second,
-  }) : super(key: key);
+  const IftarTimeContanier({Key key, @required this.hour, @required this.minute, @required this.second}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
