@@ -1,3 +1,5 @@
+import 'package:EzanVakti/ui/styles/appBorderRadius.dart';
+import 'package:EzanVakti/ui/styles/appBoxShadow.dart';
 import 'package:flutter/material.dart';
 
 class Helper {
@@ -10,4 +12,6 @@ class Helper {
   static SizedBox get sizedBoxW10 => SizedBox(width: 10);
   static SizedBox get sizedBoxW20 => SizedBox(width: 20);
 
+  static BoxDecoration get buildBoxDecoration =>
+      BoxDecoration(color: Colors.white, borderRadius: AppBorderRadius.timeContainerRadius, boxShadow: [AppBoxShadow.containerBoxShadow]);
 }

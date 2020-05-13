@@ -1,7 +1,10 @@
-import 'package:EzanVakti/ui/widgets/app_bar.dart';
-import 'package:EzanVakti/ui/widgets/bottom_bar.dart';
-import 'package:EzanVakti/ui/widgets/homePageWidgets/timeContainer.dart';
-import 'package:flutter/material.dart';
+import 'package:EzanVakti/ui/widgets/app_bar.dart' show CustomAppBar;
+import 'package:EzanVakti/ui/widgets/bottom_bar.dart' show CustomBottomNavigationBar;
+import 'package:EzanVakti/ui/widgets/helper.dart';
+import 'package:EzanVakti/ui/widgets/homePageWidgets/iftarTimeContainer.dart';
+import 'package:EzanVakti/ui/widgets/homePageWidgets/timeContainer.dart' show TimeContainer;
+import 'package:flutter/material.dart' show BuildContext, Column, EdgeInsets, Padding, Scaffold, SingleChildScrollView, State, StatefulWidget, Theme, Widget;
+import 'package:intl/intl.dart' show DateFormat;
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,6 +12,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var now;
+  final format = new DateFormat('EEEE dd MMMM yyyy', 'tr_TR');
+  bool visibleRamazan = true;
+  String differenceInDays = "";
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() => ramazanFunc());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,12 +33,21 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.fromLTRB(22, 32, 32, 22),
           child: Column(
             children: <Widget>[
-              TimeContainer(),
+              TimeContainer(ramazanDay: differenceInDays, time: format.format(now).toString(), visibleRamazan: visibleRamazan),
+              Helper.sizedBoxH20,
+              IftarTimeContanier(hour: 3, minute: 35, second: 33),
             ],
           ),
         ),
       ),
       bottomNavigationBar: CustomBottomNavigationBar(),
     );
+  }
+
+  void ramazanFunc() {
+    now = new DateTime.now();
+    var ramazanStarting = new DateTime.utc(2020, 4, 24);
+    differenceInDays = (now.difference(ramazanStarting).inDays).toString();
+    (now.difference(ramazanStarting).inDays) == 30 ? visibleRamazan = false : visibleRamazan = true;
   }
 }
