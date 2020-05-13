@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.fromLTRB(22, 32, 32, 22),
           child: Column(
             children: <Widget>[
               TimeContainer(),

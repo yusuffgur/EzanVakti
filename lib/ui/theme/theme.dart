@@ -8,6 +8,9 @@ final themeData = ThemeData(
   backgroundColor: AppColors.colorLightSecondary,
   primaryColorDark: AppColors.colorDarkPrimary,
   splashColor: AppColors.colorLightPrimary,
-  textTheme: TextTheme(button: GoogleFonts.openSans(fontWeight: FontWeight.bold, color: AppColors.colorLightPrimary)),
+  textTheme: TextTheme(
+    button: GoogleFonts.openSans(fontWeight: FontWeight.bold, color: AppColors.colorLightPrimary),
+    headline6: GoogleFonts.openSans(fontWeight: FontWeight.bold, color: AppColors.colorLightPrimary),
+  ),
   iconTheme: IconThemeData(color: AppColors.colorLightPrimary, size: 24),
 );

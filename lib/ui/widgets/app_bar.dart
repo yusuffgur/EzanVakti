@@ -1,4 +1,6 @@
 import 'package:EzanVakti/ui/helper/AppStrings.dart';
+import 'package:EzanVakti/ui/styles/appBorderRadius.dart';
+import 'package:EzanVakti/ui/styles/appBoxShadow.dart';
 import 'package:EzanVakti/ui/styles/appTextStyles.dart';
 import 'package:EzanVakti/ui/widgets/appLogo.dart';
 import 'package:flutter/material.dart';
@@ -11,11 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return PreferredSize(
       preferredSize: Size.fromHeight(110.0),
       child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(50)),
-          boxShadow: [BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10)],
-        ),
+        decoration: _buildBoxDecoration,
         child: Align(
           alignment: Alignment.bottomCenter,
           child: Padding(
@@ -34,6 +32,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
     );
   }
+
+  BoxDecoration get _buildBoxDecoration =>
+      BoxDecoration(color: Colors.white, borderRadius: AppBorderRadius.appBarRadius, boxShadow: [AppBoxShadow.materialShadow]);
 
   @override
   Size get preferredSize => Size.fromHeight(90.0);

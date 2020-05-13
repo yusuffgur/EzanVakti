@@ -14,6 +14,7 @@ class AppStrings {
   // #Get Started
 
   // Home Screen
+  static const String ramazan = "Ramazan";
   static const String homePage = "Anasayfa";
   static const String darkMode = "Koyu Mod";
   static const String location = "Konum";
