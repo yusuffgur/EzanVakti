@@ -1,5 +1,5 @@
 class AppStrings {
-  static const String appName = 'EzanVakti';
+  static const String appName = 'Ezan Vakti';
   static const String appVersion = 'v0.1';
 
   // Get Started

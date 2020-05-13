@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Helper {
+  static SizedBox get sizedBoxH5 => SizedBox(height: 5);
   static SizedBox get sizedBoxH10 => SizedBox(height: 10);
   static SizedBox get sizedBoxH20 => SizedBox(height: 20);
   static SizedBox get sizedBoxH30 => SizedBox(height: 30);

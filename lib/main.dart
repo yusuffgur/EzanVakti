@@ -1,26 +1,21 @@
+import 'package:EzanVakti/ui/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'screens/home_page.dart';
-import 'ui/helper/AppColors.dart';
 import 'ui/helper/AppStrings.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final themeData = ThemeData(
-    primaryColor: AppColors.colorLightPrimary,
-    accentColor: AppColors.colorLightSecondary,
-    backgroundColor: AppColors.colorLightSecondary,
-    primaryColorDark: AppColors.colorDarkPrimary,
-    splashColor: AppColors.colorLightPrimary,
-    textTheme: TextTheme(),
-  );
-
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
+
     return MaterialApp(
       theme: themeData,
       title: AppStrings.appName,
+      debugShowCheckedModeBanner: false,
       home: HomePage(),
     );
   }

@@ -6,11 +6,12 @@ import 'AppColors.dart';
 
 class AppIcons {
   // Icons
-  static final Icon location = Icon(Icons.location_on, color: AppColors.colorLightSecondary);
-  static final Icon settings = Icon(Icons.settings, color: AppColors.colorLightSecondary);
-  static final Icon navigateNext = Icon(Icons.navigate_next, color: AppColors.colorLightSecondary);
-  static final Icon dropdown = Icon(Icons.arrow_drop_down, color: AppColors.colorLightSecondary);
-  static final Icon mmoon = Icon(Mdi.moonWaningCrescent, color: AppColors.colorLightSecondary);
+  static final IconData location = Icons.location_on;
+  static final IconData home = Icons.home;
+  static final IconData settings = Icons.settings;
+  static final IconData navigateNext = Icons.navigate_next;
+  static final IconData dropdown = Icons.arrow_drop_down;
+  static final IconData moon = Mdi.moonWaningCrescent;
   static final SvgPicture imsak = SvgPicture.asset(imsakSVG, color: AppColors.colorLightSecondary, height: 20);
   static final SvgPicture sun = SvgPicture.asset(sunSVG, color: AppColors.colorLightSecondary, height: 20);
   static final SvgPicture noon = SvgPicture.asset(noonSVG, color: AppColors.colorLightSecondary, height: 20);

@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class AppLogo extends StatelessWidget {
   final double height;
   final Color color;
-  const AppLogo({Key key, this.height, this.color}) : super(key: key);
+  const AppLogo({Key key, @required this.height, @required this.color}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
