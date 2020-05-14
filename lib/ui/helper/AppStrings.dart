@@ -3,14 +3,14 @@ class AppStrings {
   static const String appVersion = 'v0.1';
 
   // Get Started
-  static const String starting = "Başlarken";
-  static const String selectCity = "Şehrinizi seçin.";
-  static const String selectDistrict = "İlçenizi seçin.";
-  static const String setting = "Ayarlanıyor";
   static const String next = "İleri";
   static const String start = "Başla";
-  static const String onboardingDescription1 = "Gelecek ekrandan konumuzu seçiniz.";
-  static const String onboardingDescription2 = "Hazır olduğunuzda ana sayfaya yönlendirilecekseniz.";
+  static const String onboardingTitle1 = "Başlarken";
+  static const String onboardingTitle2 = "Konum";
+  static const String onboardingTitle3 = "Bildirim";
+  static const String onboardingDescription1 = "Flutter ile geliştirilmiştir. 💙";
+  static const String onboardingDescription2 = "Konumunuzu ayarlamayı unutmayın.";
+  static const String onboardingDescription3 = "Namaz saatlerinde ve iftar saatinde bildirim alacaksınız.";
   // #Get Started
 
   // Home Screen
@@ -34,6 +34,8 @@ class AppStrings {
 
   // Change Location
   static const String changeLocation = "Konum Değiştir";
+  static const String selectCity = "Şehrinizi seçin.";
+  static const String selectDistrict = "İlçenizi seçin.";
   static const String cancel = "İptal";
   static const String add = "Ekle";
   // #Change Location

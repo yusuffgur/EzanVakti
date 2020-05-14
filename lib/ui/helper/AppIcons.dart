@@ -8,6 +8,7 @@ class AppIcons {
   // Icons
   static final IconData location = Icons.location_on;
   static final IconData home = Icons.home;
+  static final IconData notification = Icons.notifications;
   static final IconData settings = Icons.settings;
   static final IconData navigateNext = Icons.navigate_next;
   static final IconData dropdown = Icons.arrow_drop_down;
