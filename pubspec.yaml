@@ -20,6 +20,8 @@ dependencies:
   intl: ^0.16.1
   carousel_slider: ^2.1.0
   flutter_typeahead: ^1.8.1
+  flutter_launcher_icons: ^0.7.5
+  http: ^0.12.1
 
 dev_dependencies:
   flutter_test:
@@ -31,6 +33,12 @@ flutter_native_splash:
     image: assets/logo.png
     color: "5C93C4"
     android_disable_fullscreen: true
+
+flutter_icons:
+    image_path_android: "assets/icon.png"
+    image_path_ios: "assets/icon.png"
+    android: true
+    ios: true
 
 flutter:
   uses-material-design: true
