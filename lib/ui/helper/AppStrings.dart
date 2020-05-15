@@ -8,7 +8,7 @@ class AppStrings {
   static const String onboardingTitle1 = "Başlarken";
   static const String onboardingTitle2 = "Konum";
   static const String onboardingTitle3 = "Bildirim";
-  static const String onboardingDescription1 = "Flutter ile geliştirilmiştir. 💙";
+  static const String onboardingDescription1 = "Flutter ile geliştirildi. 💙";
   static const String onboardingDescription2 = "Konumunuzu ayarlamayı unutmayın.";
   static const String onboardingDescription3 = "Namaz saatlerinde ve iftar saatinde bildirim alacaksınız.";
   // #Get Started
@@ -38,6 +38,7 @@ class AppStrings {
   static const String selectDistrict = "İlçenizi seçin.";
   static const String cancel = "İptal";
   static const String add = "Ekle";
+  static const String errorCity = "Şehir Bulunamadı";
   // #Change Location
 
   // Other

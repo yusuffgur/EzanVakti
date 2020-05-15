@@ -35,17 +35,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   List<Widget> _buildPageIndicator() {
     List<Widget> list = [];
-    for (int i = 0; i < pages.length; i++) {
-      list.add(i == _currentPage ? _indicator(true) : _indicator(false));
-    }
+    for (int i = 0; i < pages.length; i++) list.add(i == _currentPage ? _indicator(true) : _indicator(false));
     return list;
   }
 
   List<Widget> buildOnboardingPages() {
     final children = <Widget>[];
-    for (int i = 0; i < pages.length; i++) {
-      children.add(_showPageData(pages[i]));
-    }
+    for (int i = 0; i < pages.length; i++) children.add(_showPageData(pages[i]));
     return children;
   }
 

@@ -19,6 +19,7 @@ dependencies:
   flutter_svg: ^0.17.4
   intl: ^0.16.1
   carousel_slider: ^2.1.0
+  flutter_typeahead: ^1.8.1
 
 dev_dependencies:
   flutter_test:

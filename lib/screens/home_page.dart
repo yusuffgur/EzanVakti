@@ -1,11 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart' show DateFormat;
+
 import 'package:EzanVakti/ui/widgets/app_bar.dart' show CustomAppBar;
 import 'package:EzanVakti/ui/widgets/bottom_bar.dart' show CustomBottomNavigationBar;
 import 'package:EzanVakti/ui/widgets/helper.dart';
 import 'package:EzanVakti/ui/widgets/homePageWidgets/iftarTimeContainer.dart';
 import 'package:EzanVakti/ui/widgets/homePageWidgets/prayerTimeContainer.dart';
 import 'package:EzanVakti/ui/widgets/homePageWidgets/timeContainer.dart' show TimeContainer;
-import 'package:flutter/material.dart' show BuildContext, Column, EdgeInsets, Padding, Scaffold, SingleChildScrollView, State, StatefulWidget, Theme, Widget;
-import 'package:intl/intl.dart' show DateFormat;
 
 class HomePage extends StatefulWidget {
   @override

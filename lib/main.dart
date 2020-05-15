@@ -1,3 +1,4 @@
+import 'package:EzanVakti/screens/home_page.dart';
 import 'package:EzanVakti/screens/onboarding_page.dart';
 import 'package:EzanVakti/ui/theme/theme.dart' show themeData;
 import 'package:flutter/material.dart' show BuildContext, MaterialApp, StatelessWidget, Widget, runApp;
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: themeData,
       title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
-      home: OnboardingPage(),
+      home: HomePage(),
     );
   }
 }

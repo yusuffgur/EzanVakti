@@ -20,4 +20,7 @@ class AppColors {
   static final Color colorStartedShadow = Color(0x60274C71);
   // #Get Started
 
+  // Alert Dialog
+  static final Color colorAlertDialogBack = Color(0xFFF8F7F2);
+  // #Alert Dialog
 }

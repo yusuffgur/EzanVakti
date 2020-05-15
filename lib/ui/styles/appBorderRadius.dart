@@ -7,4 +7,5 @@ class AppBorderRadius {
   static BorderRadius get timeContainerRadius => BorderRadius.all(Radius.circular(20));
   static RoundedRectangleBorder get fabRadius =>
       RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), topLeft: Radius.circular(30)));
+  static RoundedRectangleBorder get alertDialogRadius => RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20)));
 }
