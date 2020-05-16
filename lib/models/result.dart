@@ -51,7 +51,7 @@ Future<List<City>> getCityData() async {
     for (int i = 0; i < data.length; i++) {
       City _city = new City(
         sehirAdi: data[i]["SehirAdi"],
-        sehirId: data[i]["SehirId"],
+        sehirId: data[i]["SehirID"],
       );
       city.add(_city);
     }
