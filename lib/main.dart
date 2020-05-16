@@ -1,5 +1,4 @@
-import 'package:EzanVakti/screens/home_page.dart';
-import 'package:EzanVakti/screens/onboarding_page.dart';
+import 'package:EzanVakti/screens/home_page.dart' show HomePage;
 import 'package:EzanVakti/ui/theme/theme.dart' show themeData;
 import 'package:flutter/material.dart' show BuildContext, MaterialApp, StatelessWidget, ThemeMode, Widget, runApp;
 import 'package:flutter/services.dart' show SystemChrome, SystemUiOverlay;

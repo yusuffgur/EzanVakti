@@ -36,6 +36,8 @@ class AppStrings {
   static const String changeLocation = "Konum Değiştir";
   static const String selectCity = "Şehrinizi seçin.";
   static const String selectDistrict = "İlçenizi seçin.";
+  static const String city = "İl";
+  static const String district = "İlçe";
   static const String cancel = "İptal";
   static const String add = "Ekle";
   static const String errorCity = "Şehir Bulunamadı";

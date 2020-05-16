@@ -1,3 +1,4 @@
+import 'package:EzanVakti/models/result.dart';
 import 'package:EzanVakti/ui/helper/AppColors.dart';
 import 'package:EzanVakti/ui/helper/AppIcons.dart' show AppIcons;
 import 'package:EzanVakti/ui/helper/AppStrings.dart' show AppStrings;
@@ -16,6 +17,12 @@ class CustomBottomNavigationBar extends StatefulWidget {
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   final TextEditingController cityTextController = TextEditingController();
   final TextEditingController districtTextController = TextEditingController();
+  List<City> cityResult = [];
+  List<District> districtResult = [];
+  String selectedCity = "";
+  String selectedDistrict = "";
+  String selectedDistrictId = "";
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +57,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 
   void showSelectCity() {
     clearTextEditing();
+    _getCityData();
     showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -63,24 +71,26 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 width: MediaQuery.of(context).size.width * 0.80,
                 child: Column(
                   children: <Widget>[
-                    TypeAheadField(
+                    TypeAheadFormField(
                       getImmediateSuggestions: true,
                       itemBuilder: (context, suggestion) => Card(child: ListTile(title: Text(suggestion))),
-                      onSuggestionSelected: (suggestion) {}, // TODO
-                      suggestionsCallback: (String pattern) {}, // TODO
+                      onSuggestionSelected: (suggestion) => onCitySuggestionSelected(suggestion),
+                      suggestionsCallback: (pattern) => getCitySuggestions(pattern),
                       errorBuilder: (context, Object error) => Text(AppStrings.errorCity),
-                      noItemsFoundBuilder: (context) => buildNoItemsBuilder(context),
+                      noItemsFoundBuilder: (context) => buildNoItemsBuilder(context, AppStrings.city),
                       textFieldConfiguration: buildTextFieldConfiguration(context, this.cityTextController, AppStrings.selectCity),
+                      onSaved: (value) => onCitySuggestionSelected(value),
                     ),
                     Helper.sizedBoxH10,
-                    TypeAheadField(
+                    TypeAheadFormField(
                       getImmediateSuggestions: true,
                       itemBuilder: (context, suggestion) => Card(child: ListTile(title: Text(suggestion))),
-                      onSuggestionSelected: (suggestion) {}, // TODO
-                      suggestionsCallback: (String pattern) {}, // TODO
+                      onSuggestionSelected: (suggestion) => onDistrictSuggestionSelected(suggestion),
+                      suggestionsCallback: (String pattern) => getDistrictSuggestions(pattern),
                       errorBuilder: (context, Object error) => Text(AppStrings.errorCity),
-                      noItemsFoundBuilder: (context) => buildNoItemsBuilder(context),
+                      noItemsFoundBuilder: (context) => buildNoItemsBuilder(context, AppStrings.district),
                       textFieldConfiguration: buildTextFieldConfiguration(context, this.districtTextController, AppStrings.selectDistrict),
+                      onSaved: (value) => this.selectedDistrict = value,
                     ),
                     Spacer(),
                     Row(
@@ -105,6 +115,67 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         });
   }
 
+  void onCitySuggestionSelected(String suggestion) {
+    this.cityTextController.text = suggestion;
+    this.selectedCity = suggestion;
+    print("DEBUG");
+    print("DEBUG´2");
+    String id;
+    try {
+      print("DEBUG3");
+
+      cityResult.asMap().forEach((index, element) {
+        print("DEBUG MAP");
+        if ((element.sehirAdi) == suggestion) {
+          print("DEBUG IF ELSE");
+
+          id = element.sehirId;
+          print("sehir id :" + element.sehirId + " " + id);
+          _getDistrictData(id);
+        }
+      });
+    } catch (e) {
+      print(e.error);
+    }
+  }
+
+  void _getCityData() async {
+    List<City> _cityTemp = await getCityData();
+    setState(() {
+      cityResult = _cityTemp;
+    });
+  }
+
+  void _getDistrictData(String _selectedCityId) async {
+    List<District> _districtTemp = await getDistrictData(_selectedCityId);
+    setState(() {
+      districtResult = _districtTemp;
+    });
+  }
+
+  List<String> getCitySuggestions(String query) {
+    List<String> cities = List();
+    cityResult.forEach((element) {
+      cities.add(element.sehirAdi);
+    });
+    cities.retainWhere((element) => element.toLowerCase().contains(query.toLowerCase()));
+    return cities;
+  }
+
+  List<String> getDistrictSuggestions(String query) {
+    List<String> districts = List();
+    districtResult.forEach((element) {
+      districts.add(element.ilceAdi);
+    });
+    districts.retainWhere((element) => element.toLowerCase().contains(query.toLowerCase()));
+    return districts;
+  }
+
+  void onDistrictSuggestionSelected(String suggestion) {
+    this.districtTextController.text = suggestion;
+    this.selectedDistrict = suggestion;
+  }
+
   void clearTextEditing() {
     cityTextController.text = "";
     districtTextController.text = "";
@@ -126,17 +197,17 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         suffixIcon: Icon(AppIcons.dropdown),
         filled: true,
         fillColor: Theme.of(context).accentColor,
-        border: OutlineInputBorder(borderSide: BorderSide.none),
+        border: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).primaryColor), borderRadius: AppBorderRadius.textEditingBorderRadius),
         hintText: _hintText,
         hintStyle: Theme.of(context).textTheme.subtitle2,
       ),
     );
   }
 
-  Padding buildNoItemsBuilder(BuildContext context) {
+  Padding buildNoItemsBuilder(BuildContext context, String itemTitle) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Text("Ülke Bulunamadı", textAlign: TextAlign.center, style: TextStyle(color: Theme.of(context).disabledColor, fontSize: 18.0)),
+      child: Text("$itemTitle Bulunamadı", textAlign: TextAlign.center, style: TextStyle(color: Theme.of(context).disabledColor, fontSize: 18.0)),
     );
   }
 
