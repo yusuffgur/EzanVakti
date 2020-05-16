@@ -31,7 +31,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       child: ClipRRect(
         borderRadius: AppBorderRadius.bottomBarRadius,
         child: Container(
-          height: 80,
+          //height: 80,
           child: BottomNavigationBar(
             currentIndex: 1,
             unselectedIconTheme: Theme.of(context).iconTheme,
